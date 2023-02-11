@@ -9776,6 +9776,11 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(1780);
 const github = __nccwpck_require__(4489);
+const path = __nccwpck_require__(1017);
+const fileName = "app/build/outputs/apk/debug/app-debug.apk";
+const file = path.basename(fileName);
+
+console.log(file); // 'python.exe'
 
 function getPath(pullRequestName) {
   if (pullRequestName.length == 0) return "";
@@ -9785,6 +9790,7 @@ function getPath(pullRequestName) {
     return pullRequestName.substring(init + 1, two);
   }
 }
+// app/build/outputs/apk/debug/app-debug.apk
 
 try {
   // `who-to-greet` input defined in action metadata file
