@@ -9790,11 +9790,11 @@ try {
   // `who-to-greet` input defined in action metadata file
   const pullRequestName = core.getInput("pull-request-name");
   console.log(`Pull request namexx: ${pullRequestName}!`);
-  const time = new Date().getMilliseconds();
-  core.setOutput("apk-name", `${getPath(pullRequestName)}${time}`);
+  const time = Date.now();
+  core.setOutput("apk-name", `${getPath(pullRequestName)}-${time}`);
   // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2);
-  console.log(`The event payload: ${payload}`);
+  // const payload = JSON.stringify(github.context.payload, undefined, 2);
+  // console.log(`The event payload: ${payload}`);
 } catch (error) {
   core.setFailed(error.message);
 }
