@@ -1,0 +1,13 @@
+name: "Hello World"
+description: "Obtener el codigo del pull request creado"
+inputs:
+  pull-request-name: # id of input
+    description: "Nombre del pull request"
+    required: false
+    default: ""
+outputs:
+  apk-name: # id of output
+    description: "Nombre generado para el apk"
+runs:
+  using: "node16"
+  main: "dist/index.js"
